@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="script.js" defer></script>
+    <!-- <script src="test.js"></script> -->
+</head>
+
+<body>
+    <p>Enter below the card details</p>
+
+    <!-- So this: -->
+    <div>
+        <div class="form-group" id="card-number-field">
+            <input type="text" class="form-control" placeholder='enter card number' id="cardNumber"
+             maxlength="16" onkeypress="return cardNumber(event, this)">
+        </div>
+        <div class="form-group" id="card-name-field">
+            <input type="text" onkeypress="return cardName(event, this)" class="form-control"
+                placeholder='enter name' id="cardName">
+        </div>
+        <div class="form-group" id="card-validity">
+            <label> Validity </label>
+            <select id = 'card-month'>
+                <option value="00" disabled selected hidden>Month</option>
+                <option value="01">January </option>
+                <option value="02">February </option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select id = 'card-year'>
+                <option value="00" disabled selected hidden>YYYY</option>
+                <option value="2017">2017 </option>
+                <option value="2018">2018 </option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+            <label> Enter CVV </label>
+            <input type="password" class="form-control" placeholder='CVV' id="cvv"
+                onkeypress="return cvv(event, this)" minLength="3" maxlength="4">
+        </div>
+        <div class="form-group">
+            <input id="card-checkbox" type='checkbox' onclick="checkBox()"> Save the card information</input>
+        </div>
+        <button type="submit" form="nameform" value="Submit" id = 'submit'>Pay Now</button>
+    </div>
+</body>
+
+</html>
